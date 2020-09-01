@@ -954,7 +954,7 @@ class Peer extends stream.Duplex {
 
     event.streams.forEach(eventStream => {
       this._debug('on track')
-      this.emit('track', event.track, eventStream)
+      this.emit('track', event.track, eventStream, event.transceiver.mid)
 
       this._remoteTracks.push({
         track: event.track,
